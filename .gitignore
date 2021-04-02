@@ -1,0 +1,7 @@
+.vs
+bin
+obj
+GlobalTicket.TicketManagement.Application/bin
+GlobalTicket.TicketManagement.Application/obj
+GlobalTicket.TicketManagement.Domain/bin
+GlobalTicket.TicketManagement.Domain/obj

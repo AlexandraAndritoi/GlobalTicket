@@ -1,0 +1,1 @@
+**Pluralsight course**: Architecting ASP.NET Core Applications: Best Practices
