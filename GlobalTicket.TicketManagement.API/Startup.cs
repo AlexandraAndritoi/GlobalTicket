@@ -1,9 +1,12 @@
+using GlobalTicket.TicketManagement.API.Services;
 using GlobalTicket.TicketManagement.API.Utility;
 using GlobalTicket.TicketManagement.Application;
+using GlobalTicket.TicketManagement.Application.Contracts;
 using GlobalTicket.TicketManagement.Infrastructure;
 using GlobalTicket.TicketManagement.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +32,9 @@ namespace GlobalTicket.TicketManagement.API
             services.AddApplicationServices();
             services.AddInfrastructureServices(Configuration);
             services.AddPersistenceServices(Configuration);
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<ILoggedInUserService, LoggedInUserService>();
 
             services.AddControllers();
 
